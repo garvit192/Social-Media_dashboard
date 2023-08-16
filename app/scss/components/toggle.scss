@@ -2,8 +2,8 @@
 
 .toggle{
     &-button{
-        width: rem(16);
-        height: rem(16);
+        width: torem(16);
+        height: torem(16);
         border-radius: 50%;
         background-color: var(--toggle);
     }
