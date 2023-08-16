@@ -1,6 +1,8 @@
 @use '../util' as *;
 
 .toggle{
+    border: none;
+
     &-button{
         width: torem(16);
         height: torem(16);
