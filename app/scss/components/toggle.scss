@@ -1,12 +1,82 @@
 @use '../util' as *;
 
 .toggle{
+    display: grid;
+    grid-template-columns: 1fr torem(60) 1fr;
+    grid-template-rows: repeat(2,1fr);
+    gap: torem(4.8) torem(8);
     border: none;
+    margin: 0;
 
-    &-button{
-        width: torem(16);
-        height: torem(16);
-        border-radius: 50%;
-        background-color: var(--toggle);
+    label{
+        font-size: torem(14);
+        align-self: center;
+
+        &[for='dark']{
+            grid-row: 1/2;
+            grid-column: 1/2;
+            justify-self: end;
+        }
+        &[for='light']{
+            grid-row: 1/2;
+            grid-column: 3/4;
+        }
+        &[for='system']{
+            grid-column: 1/4;
+            grid-row: 2/3;
+            justify-self: center;
+            align-self: start;
+        }
     }
+
+    &__wrapper{
+        position: relative;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        height: torem(24);
+
+    }
+    input[type="radio"]{
+        margin: 0 torem(-3) 0 torem(-3);
+        opacity: 0;
+        width: torem(20);
+        height: torem(24);
+
+        &:focus ~ .toggle__button{
+            border: torem(2) torem(2) white;
+        }
+    }
+    &__background{
+        display: block;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: torem(12);
+        background: linear-gradient(225deg, var(--toggle-bg-end) 0%, var(--toggle-bg-start) 98.02%);
+        position: absolute;
+        pointer-events: none;
+    }
+    &__button{
+        top: torem(3);
+        position: absolute;
+        left: torem(3);
+        right: 100%;
+        width: torem(18);
+        height: torem(18);
+        border-radius: 50%;
+        background-color: var(--dark-bg);
+        transition: all 150ms ease-in-out;
+    }
+
+    #light:checked ~ .toggle__button{
+        left: calc(100% - torem(21));
+        right: torem(3);
+    }
+
+    #system:checked ~ .toggle__button{
+        left: 50%;
+        right: auto;
+        transform: translate(-50%);
+    }
+   
 }

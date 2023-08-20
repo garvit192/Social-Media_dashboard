@@ -1,5 +1,16 @@
+@use '../util' as *;
+
 h1, h2, h3 {
-    margin-top: 0;
+    margin-top: 0px;
+    line-height: 1.1;
+}
+
+h1{
+    font-size: torem(24);
+    margin-bottom: torem(3);
+    @include breakpoint(large){
+        font-size: torem(28);
+    }
 }
 
 a, a:visited, a:active {
