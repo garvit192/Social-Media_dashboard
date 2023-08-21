@@ -1,5 +1,131 @@
 @use '../util' as *;
 
+.cards{
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: torem(30);
+
+   @include breakpoint(medium){
+      grid-template-columns: repeat(2,1fr);
+   }
+
+   @include breakpoint(large){
+      grid-template-columns: repeat(4,1fr);
+   }
+}
+
 .card{
-   padding: torem(20);
+   position: relative;
+   overflow: hidden;
+   background: var(--dark-card);
+   color: var(--dark-text-blue);
+   text-align: center;
+   padding: torem(25);
+   border-radius: torem(5);
+   transition: background 150ms ease-in-out;
+   cursor: pointer;
+
+   &:hover{
+      background: var(--dark-card-hover);
+   }
+
+   &--facebook{
+      border-top: torem(5) solid var(--facebook);
+   }
+   &--twitter{
+      border-top: torem(5) solid var(--twitter);
+   }
+   &--instagram{
+      padding-top: torem(30);
+      &::before{
+         content: '';
+         display: block;
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: torem(5);
+         background: linear-gradient(225deg,var(--instagram-end) 0%, var(--instagram-mid) 50.91%, var(--instagram-start) 100%);
+      }
+   }
+   &--youtube{
+      border-top: torem(5) solid var(--youtube);
+   }
+
+   &__platform {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: torem(28);
+      height: torem(20);
+   }
+
+   &__subtitle{
+      font-size: torem(14);
+      font-weight: 700;
+   }
+
+   &__icon{
+      margin-right: torem(8);
+      &--facebook{
+
+      }
+      &--twitter{
+
+      }
+      &--instagram{
+
+      }
+      &--youtube{
+
+      }
+   }
+   &__username{
+      font-size: torem(12);
+      font-weight: 700;
+   }
+
+   &__followers{
+      margin-bottom: torem(25);
+   }
+   &__count{
+      color: var(--light-bg);
+      font-weight: 700;
+      letter-spacing: torem(-2);
+      line-height: 1;
+      margin-bottom: torem(4);
+      
+      &--big{
+         font-size: torem(56);
+      }
+      &--small{
+         font-size: torem(32);
+         font-weight: 700;
+      }
+   }
+
+   &__label{
+      color: var(--dark-text-blue);
+      font-size: torem(12);
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: torem(5);
+   }
+   &__change{
+      font-size: torem(12);
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &--up{
+         color: var(--limegreen);
+      }
+      &--down{
+         color: var(--brightred);
+      }
+
+      img{
+         margin-right: torem(4);
+      }
+   }
 }

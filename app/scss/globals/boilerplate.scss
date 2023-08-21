@@ -1,3 +1,5 @@
+@use '../util' as *;
+
 html {
     font-size: 100%;
     box-sizing: border-box;
@@ -13,4 +15,13 @@ body {
     font-family: var(--font-inter);
     background: var(--dark-bg);
     color: var(--dark-text-white);
+}
+
+.visualy-hidden{
+    position: absolute;
+    left: torem(-10000);
+    top: auto;
+    width: torem(1);
+    height: torem(1);
+    overflow: hidden;
 }
