@@ -27,7 +27,6 @@ function jsTask() {
         .pipe(dest('dist', { sourcemaps: '.' }));
 }
 
-
 // Browsersync Tasks
 function browsersyncServe(cb) {
     browsersync.init({
