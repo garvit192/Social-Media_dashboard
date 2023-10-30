@@ -91,8 +91,6 @@ I also learned concepts such as local Storage, and "breakpoints" that alter css 
 
 I would like to focus more on javascript and css in my future projects. As of now I am not very comfortable with my skills  in them to be able to create a responsive website. This will help me to move on from a static webpage to a dynamic site.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
 ### Useful resources
 
 - [CoderCoder](https://youtu.be/krfUjg0S2uI) - This tutorial guided me at times when I was stuck and helped me form an approach and structure I could use to complete the challenge.
